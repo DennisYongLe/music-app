@@ -19,6 +19,8 @@
   </div>
 </template>
 <script>
+import { ref } from 'vue'
+import useSlider from './use-slider'
 export default {
   name: 'sliderContent',
   props: {
@@ -29,6 +31,15 @@ export default {
         return []
       },
     },
+  },
+  setup() {
+    const rootRef = ref(null)
+    const { currentPageIndex } = useSlider(rootRef)
+
+    return {
+      rootRef,
+      currentPageIndex,
+    }
   },
 }
 </script>
