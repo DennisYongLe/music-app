@@ -2,6 +2,9 @@
   <headerContent />
   <tabContent />
   <RouterView />
+  <!-- <Suspense>
+    <RouterView />
+  </Suspense> -->
 </template>
 <script>
 import tabContent from './components/tab/TabContent.vue'

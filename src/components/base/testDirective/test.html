@@ -1,0 +1,61 @@
+<!-- 复习position
+1.当出现父子关系时候，父元素为fixed relative absolute之一的时候，子元素根据父元素进行布局。如果没有则以body为准。
+
+2.绝对布局不耽误其他div
+3.fixed布局不依托于任何父元素，absolute依托于父元素
+4.子绝对父相对
+5.相对布局不脱离文档流，绝对布局脱离文档流，不占用空间。
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        background: #000;
+      }
+      .wrap {
+        width: 600px;
+        height: 600px;
+        background: #aaa;
+      }
+      .test {
+        width: 500px;
+        height: 500px;
+        background: green;
+        position: fixed;
+      }
+      .sub-test {
+        width: 500px;
+        height: 50px;
+        background: tomato;
+        position: absolute;
+        left: 3px;
+        top: 400px;
+      }
+      .item {
+        width: 200px;
+        height: 200px;
+        background: red;
+        /* position: relative;
+        left: 100px; */
+        position: fixed;
+        right: 0;
+      }
+    </style>
+
+    <body>
+      <div class="wrap">
+        <div class="item">123</div>
+        <div class="test">
+          34
+          <div>43</div>
+          <div class="sub-test">skd</div>
+        </div>
+      </div>
+    </body>
+  </head>
+</html>

@@ -1,5 +1,5 @@
 <template>
-  <div class="recommend">
+  <div class="recommend" v-loading:[title]="loading" v-suggest:jjj="123">
     <ScrollContent class="recommend-content">
       <div>
         <div class="slider-wrapper">
@@ -15,7 +15,8 @@
           <ul>
             <li v-for="item in albums" :key="item.id" class="item">
               <div class="icon">
-                <img width="60" height="60" :src="item.pic" />
+                <!-- <img width="60" height="60" :src="item.pic" /> -->
+                <img width="60" height="60" v-lazy="item.pic" />
               </div>
               <div class="text">
                 <div class="name">{{ item.username }}</div>
@@ -42,6 +43,7 @@ export default {
       sliders: [],
       albums: [],
       selectedAlbum: null,
+      title: '这是loading',
     }
   },
   async created() {
@@ -62,7 +64,7 @@ export default {
 
 <style lang="scss" scoped>
 .recommend {
-  position: fixed;
+  // position: fixed;
   width: 100%;
   top: 88px;
   bottom: 0;
