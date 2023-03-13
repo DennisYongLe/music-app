@@ -1,6 +1,7 @@
 <template>
   <!-- <Suspense> -->
   <!--  使用v-if控制子组件渲染的时机 -->
+  <!--  使用v-if控制子组件渲染的时机 -->
   <span v-if="singers.length != 0">
     <indexList :data="singers"></indexList>
   </span>
